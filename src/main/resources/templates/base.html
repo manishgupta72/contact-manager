@@ -1,0 +1,19 @@
+<div th:fragment="parent(content)">
+  <h1>This is Parent fragment</h1>
+  <h1>profile picture</h1>
+  <div th:replace="${content}">
+
+  </div>
+  <p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa quasi
+    eligendi rerum! Quod corrupti, illum explicabo voluptatibus dignissimos
+    tempora qui.
+  </p>
+  <p>The value of x is <span th:text="${x}"></span></p>
+  <p>The value of y is <span th:text="${y}"></span></p>
+</div>
+
+
+<div th:fragment="test">
+    <h1>this is testing fragmet</h1>
+</div>
