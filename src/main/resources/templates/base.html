@@ -1,19 +1,41 @@
-<div th:fragment="parent(content)">
-  <h1>This is Parent fragment</h1>
-  <h1>profile picture</h1>
-  <div th:replace="${content}">
+<!DOCTYPE html>
+<html
+  class="light"
+  lang="en"
+  th:fragment="parent(content,title,script)"
+  xmlns:th="http://www.thymeleaf.org"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <!-- font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title th:replace="${title}">Contact Management</title>
+  </head>
+  <body class="dark:bg-gray-900 dark:text-white">
+    <!-- common header or navbar -->
 
-  </div>
-  <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa quasi
-    eligendi rerum! Quod corrupti, illum explicabo voluptatibus dignissimos
-    tempora qui.
-  </p>
-  <p>The value of x is <span th:text="${x}"></span></p>
-  <p>The value of y is <span th:text="${y}"></span></p>
-</div>
+    <div>
+      <section data-th-replace="navbar :: navbar"></section>
+    </div>
 
+    <!-- main content  -->
 
-<div th:fragment="test">
-    <h1>this is testing fragmet</h1>
-</div>
+    <section data-th-replace="${content}"></section>
+
+    <!-- flowbite cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script data-th-src="@{/js/script.js}"></script>
+  </body>
+</html>

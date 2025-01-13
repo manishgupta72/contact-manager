@@ -1,29 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-   
+    <title>About</title>
   </head>
   <body>
-    <div class="container">   
-      <h1 data-th-text="${name}"></h1>
-      <h1 th:text="${youtube}" ></h1>
-      <a th:href="${githubrepo}" class="text-2xl">Click to open githubrepo</a>
-      <p class="text-blue-600 text-4xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-        perferendis ratione quisquam aliquid, commodi doloremque magni ut sunt
-        repellendus reprehenderit cupiditate assumenda suscipit, eius nobis
-        fugit. Repudiandae reprehenderit distinctio doloribus!
-      </p>
+    <div id="content">
+      <h1>this is content from home page</h1>
     </div>
-
-    
-
-    <!-- flowbite cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script>
+      console.log("this is script from home page");
+    </script>
   </body>
 </html>
